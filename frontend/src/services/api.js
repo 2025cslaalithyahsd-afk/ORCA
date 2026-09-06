@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Default to backend on 8000 or relative path if deployed together
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+// Use relative /api path so requests seamlessly route through Vite proxy on both localhost and public tunnels
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
